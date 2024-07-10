@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Webpage Chatbot",
+    "version": "1.0",
+    "description": "Chatbot that answers questions about the current page",
+    "permissions": ["scripting", "activeTab", "storage", "tabs", "webRequest"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "js": ["content.js"],
+        "matches": ["<all_urls>"],
+        "run_at": "document_idle"
+      }
+      
+    ],
+    
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    }
+  }
