@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webpage Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 350px;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        #toggle-chat {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #chat-container {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            display: none;
+            flex-direction: column;
+            height: 70%;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+        #chat-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        #chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .message {
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+        .user-message {
+            align-self: flex-end;
+            background-color: #d1e7dd;
+        }
+        .bot-message {
+            align-self: flex-start;
+            background-color: #f8d7da;
+        }
+        #input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        #questionInput {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #askButton {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle-chat">💬</button>
+    <div id="chat-container">
+        <div id="chat-header">Webpage Chatbot</div>
+        <div id="chat-messages"></div>
+        <div id="input-container">
+            <input type="text" id="questionInput" placeholder="Type your question here...">
+            <button id="askButton">Send</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
